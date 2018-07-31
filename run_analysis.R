@@ -32,9 +32,13 @@ dt=rbindlist(datalist,fill=T)
 dt$activity %<>% factor(labels=activity_labels$V2)
 #dt is desired data.frame/data.table
 write.csv(dt,"clean_data.csv",row.names = F)
+#oohh on submiting there is txt requirement
+write.table(dt,"clean_data.txt",row.name = F)
 #mean summmary from dt
 dtmeans=dt[,lapply(.SD, mean),by=.(activity,subject,sample)]
 write.csv(dtmeans,"clean_data_means.csv",row.names = F)
+#oohh on submiting there is txt requirement
+write.table(dtmeans,"clean_data_means.txt",row.name = F)
 dtmeans=dt[,lapply(.SD, mean),by=.(subject,sample),.SDcols=1:length(cols)]
 write.csv(dtmeans,"clean_data_subject_means.csv",row.names = F)
 dtmeans=dt[,lapply(.SD, mean),by=.(activity,sample),.SDcols=1:length(cols)]
