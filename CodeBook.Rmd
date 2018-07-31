@@ -11,23 +11,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ## Data processing
-The whole processing code is in "run_analysis.R". It requires 2 packages to be installed first: data.table and magrittr. Mean and std measurement variables are selected via regular expressions: any original variable that had "mean()" or "std()" is put in clean data sets. In addition to measure variables new datasets have subject, activity type and sample(train/test) variables.
+The whole processing code is in "run_analysis.R". It requires 2 packages to be installed first: *data.table* and *magrittr*. Mean and std measurement variables are selected by regular expressions: any original variable that had "mean()" or "std()" had been put in clean data sets. In addition to measures new datasets have up to 3 new variables subject, activity type and sample(train/test) variables.
 
 
 
 ## Files
-It doesn't seams clear to me if mean summary in last part of assigment should be taken for every activity per subject or separate mean summaries be each group are required.
+It doesn't seam clear to me if mean summary in last part of assigment should be calculated for every activity per subject(nested) or mean summaries for each group by itself are required.
+So I've caculated both.
 By default lets stick with nested summary.
 
 
-* clean_data.csv - data for means and standard deviations for every case
-* clean_data_means.csv - summarized clean_data.csv with means calculated for every activity and each subject.
-* clean_data_subject_means.csv - summarized clean_data.csv with means calculated for each subject.
+* clean_data.csv - data for means and standard deviations for every case  
+* clean_data_means.csv - summarized clean_data.csv with means calculated for every activity for each subject 
+* clean_data_subject_means.csv - summarized clean_data.csv with means calculated for each subject
 * clean_data_activity_means.csv - summarized clean_data.csv with means calculated for every activity type
 
 ## Features
 
-This code book is mostly repeats original with some additions. Everything new is described in next section, while older things are mentioned in Old section.
+This code book is mostly repeats original with some additions. All new things are described in **New** section. Older things are mentioned in **Old** section.
 
 
 
