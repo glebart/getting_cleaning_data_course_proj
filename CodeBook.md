@@ -6,11 +6,14 @@ output:
 ---
 
 
-##Data processing
+
+
+## Data processing
 The whole processing code is in "run_analysis.R". It requires 2 packages to be installed first: data.table and magrittr. Mean and std measurement variables are selected via regular expressions: any original variable that had "mean()" or "std()" is put in clean data sets. In addition to measure variables new datasets have subject, activity type and sample(train/test) variables.
 
-##Files
 
+
+## Files
 It doesn't seams clear to me if mean summary in last part of assigment should be taken for every activity per subject or separate mean summaries be each group are required.
 By default lets stick with nested summary.
 
@@ -20,13 +23,13 @@ By default lets stick with nested summary.
 * clean_data_subject_means.csv - summarized clean_data.csv with means calculated for each subject.
 * clean_data_activity_means.csv - summarized clean_data.csv with means calculated for every activity type
 
-##Features
+## Features
 
 This code book is mostly repeats original with some additions. Everything new is described in next section, while older things are mentioned in Old section.
 
 
 
-###New
+### New
 Current repo contains 4 files: clean_data.csv, clean_data_means.csv, clean_data_activity_means.csv and clean_data_subject_means.csv. In addition to old variables they have new ones: activity, sample, subject. For obvious reasons last 2 files don't have either activity or subject variable.
 
 
@@ -35,7 +38,7 @@ Current repo contains 4 files: clean_data.csv, clean_data_means.csv, clean_data_
 * sample - variable showing from which sample(train/test) measurements are
 
 
-###Old
+### Old
 
 Notes:  
 * Features are normalized and bounded within [-1,1].
